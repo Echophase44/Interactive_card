@@ -1,0 +1,33 @@
+.imageContainer{
+  height: 100vh;
+  width: 40vw;
+  position: relative;
+}
+
+.imageBackround{
+  height: 100vh;
+  width: 40vw;
+}
+
+.card-front{
+  position: absolute;
+  height: 0;
+  width: 100%;
+  top: 100px;
+  right: -125px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 54.7%;
+}
+
+.card-back{
+  position: absolute;
+  top: 400px;
+  right: -200px;
+  height: 0;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 54.7%;
+}

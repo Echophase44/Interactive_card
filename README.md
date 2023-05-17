@@ -10,3 +10,5 @@
 - https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw
 
 ## Notes
+
+- Learned a neat new trick to have a div's background image auto adjust to it's the same as the background image size.
