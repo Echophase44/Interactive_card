@@ -25,5 +25,13 @@
 }
 
 #expMonth, #expYear{
-  width: 55px;
+  width: 70px;
+}
+
+#cvc{
+  width: 100px
+}
+
+.form-name, .form-number, .form-month, .form-year, .form-cvc{
+  padding: 5px;
 }

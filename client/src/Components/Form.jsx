@@ -15,27 +15,28 @@ function Form() {
       />
 
       <label htmlFor="number">CARD NUMBER</label>
-      <input className="form-cardNumber"
+      <input className="form-number"
         id="number"
         type="number"
         name="number"
         placeholder="e.g. 1234 5687 9123 0000"
+
         required
       />
 
       <div className="form-wrapper">
-        
+
         <div className="columnWrapper">
           <label htmlFor="expMonth">EXP. DATE (MM/YY)</label>
           <div className="innerExpWrapper">
-            <input 
+            <input className="form-month"
               id="expMonth"
               type="number"
               name="expMonth"
               placeholder="MM"
               required
             />
-            <input 
+            <input className="form-year"
               id="expYear"
               type="number"
               name="expYear"
@@ -47,7 +48,7 @@ function Form() {
 
         <div className="columnWrapper">
         <label htmlFor="cvc">CVC</label>
-        <input 
+        <input className="form-cvc"
           id="cvc"
           type="number"
           name="expMonth"
