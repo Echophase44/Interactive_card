@@ -1,3 +1,7 @@
+main{
+  display: flex;
+}
+
 .imageContainer{
   height: 100vh;
   width: 40vw;
@@ -12,8 +16,8 @@
 .card-front{
   position: absolute;
   height: 0;
-  width: 100%;
-  top: 100px;
+  width: 80%;
+  top: 20px;
   right: -125px;
 
   background-size: contain;
@@ -21,13 +25,57 @@
   padding-top: 54.7%;
 }
 
+.card-name{
+  color: var(--white);
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+}
+
+.card-logo{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 70px;
+  height: auto;
+}
+
+.card-number{
+  font-size: 1.3rem;
+  color: var(--white);
+  position: absolute;
+  top: 40%;
+  left: 20%
+}
+
+.card-exp{
+  position: absolute;
+  bottom: 30%;
+  right: 10%;
+  color: var(--white);
+}
+
 .card-back{
   position: absolute;
-  top: 400px;
+  bottom: 20px;
   right: -200px;
   height: 0;
-  width: 100%;
+  width: 80%;
   background-size: contain;
   background-repeat: no-repeat;
   padding-top: 54.7%;
+}
+
+.card-security{
+  position: absolute;
+  top: 36%;
+  right: 15%;
+}
+
+.infoContainer{
+  width: 55vw;
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

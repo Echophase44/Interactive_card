@@ -1,0 +1,29 @@
+.form-main{
+  width: 35vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+}
+
+.form-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.columnWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.innerExpWrapper{
+  display: flex;
+  gap: 15px;
+}
+
+#expMonth, #expYear{
+  width: 55px;
+}
