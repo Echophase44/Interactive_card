@@ -34,7 +34,26 @@
 
 .form-name, .form-number, .form-month, .form-year, .form-cvc{
   padding: 5px;
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid var(--dark-violet);
 }
 
 .form-btn{
+}
+
+p {
+  margin-top: -10px;
+  font-size: .8rem;
+  color: var(--red)
 }

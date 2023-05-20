@@ -7,15 +7,15 @@ import card_back from '../assets/bg-card-back.png'
 import cardLogo from '../assets/card-logo.svg'
 
 function Home () {
-  const [cardInfo, setCardInfo] = useState({
+  const [cardDisplayInfo, setCardDisplayInfo] = useState({
     number: ["0000000000000000"],
-    exp: ['0000'],
-    firstName: "JANE",
-    LastName: "APPLESEED",
-    security: ["000"]
+    expMonth: ['00'],
+    expYear: ['00'],
+    name: "jane appleseed",
+    cvc: ["000"]
   })
 
-  const displayCardNumber = cardInfo.number.map((value) =>{
+  const displayCardNumber = cardDisplayInfo.number.map((value) =>{
     const groupOne = value.slice(0, 4)
     const groupTwo = value.slice(4,8)
     const groupThree = value.slice(8, 12)
@@ -33,17 +33,19 @@ function Home () {
         <div className="card-front" style={{backgroundImage:"url(" + card_front + ")"}}>
           <img className="card-logo" src={cardLogo} alt="Card Logo" />
           {displayCardNumber}
-          <span className="card-name">JANE APPLESEED</span>
-          <span className="card-exp"> 00/00</span>
+          <span className="card-name">{cardDisplayInfo.name?.toUpperCase()}</span>
+          <span className="card-exp"> {cardDisplayInfo.expMonth}/{cardDisplayInfo.expYear}</span>
         </div>
 
         <div className="card-back" style={{backgroundImage:"url(" + card_back + ")"}}>
-          <span className="card-security">{cardInfo.security[0]}</span>
+          <span className="card-security">{cardDisplayInfo.cvc}</span>
         </div>
       </div>
      
      <section className="infoContainer">
-      <Form />
+      <Form 
+        setCardDisplayInfo = { setCardDisplayInfo }
+      />
 
      </section>
 

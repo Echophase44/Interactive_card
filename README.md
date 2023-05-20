@@ -12,3 +12,4 @@
 ## Notes
 
 - Learned a neat new trick to have a div's background image auto adjust to it's the same as the background image size.
+- Learned that maxLength attribute doesn't work with "number" type for inputs.

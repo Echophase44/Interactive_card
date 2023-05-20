@@ -2,15 +2,27 @@ import React from "react";
 import { useState } from "react";
 import '../styles/form.css'
 
-function Form() {
+function Form(props) {
+  const { setCardDisplayInfo } = props
+
   const initialValues = {name: "", number: "", expMonth: "", expYear: "", cvc: ""}
   const [formValues, setFormValues] = useState(initialValues)
   const [formErrors, setFormErrors] = useState({})
 
   const handleChange = (e) => {
-    
     const {name, value} = e.target
     setFormValues({...formValues, [name]: value})
+
+    if(name === "number"){
+      setCardDisplayInfo(prevInfo => ({
+        ...prevInfo,
+        [name]: new Array(value)
+      }))
+    } else {
+    setCardDisplayInfo(prevInfo => ({
+      ...prevInfo,
+      [name]: value
+    }))}
   }
 
   const handleSubmit = (e) => {
@@ -20,10 +32,23 @@ function Form() {
 
   const validation = (values) => {
     const errors = {}
+
     if(!values.name){
       errors.name = "Please enter name on the card."
     } else if (/\d+/g.test(values.name)){
       errors.name = "Numbers are not a valid input."
+    }
+
+    if(!values.number){
+      errors.number = "Field cannot be blank."
+    } else if (!/^[0-9]*$/.test(values.number)){
+      errors.number = "Wrong format, numbers only."
+    }
+
+    if(!values.expMonth || !values.expYear){
+      errors.expMonth = "Field cannot be blank."
+    } else if (!/^[0-9]*$/.test(values.expMonth) || !/^[0-9]*$/.test(values.expYear)){
+      errors.expMonth = "Wrong format, numbers only."
     }
     return errors
   }
@@ -47,13 +72,14 @@ function Form() {
       <label htmlFor="number">CARD NUMBER</label>
       <input className="form-number"
         id="number"
-        type="number"
+        type="text"
         name="number"
         placeholder="e.g. 1234 5687 9123 0000"
         value={formValues.number}
         onChange={handleChange}
-        required
+        maxLength={16}
       />
+      <p>{formErrors.number}</p>
 
       <div className="form-wrapper">
 
@@ -62,35 +88,37 @@ function Form() {
           <div className="innerExpWrapper">
             <input className="form-month"
               id="expMonth"
-              type="number"
+              type="text"
               name="expMonth"
               placeholder="MM"
               value={formValues.expMonth}
               onChange={handleChange}
-              required
+              maxLength={2}
             />
+            
             <input className="form-year"
               id="expYear"
-              type="number"
+              type="text"
               name="expYear"
               placeholder="YY"
               value={formValues.expYear}
               onChange={handleChange}
-              required
+              maxLength={2}
             />
           </div>
+          <p>{formErrors.expMonth}</p>
         </div>
 
         <div className="columnWrapper">
         <label htmlFor="cvc">CVC</label>
         <input className="form-cvc"
           id="cvc"
-          type="number"
+          type="text"
           name="cvc"
           placeholder="e.g. 123"
+          maxLength={4}
           value={formValues.cvc}
           onChange={handleChange}
-          required
         />
         </div>
       </div>
