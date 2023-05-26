@@ -32,6 +32,9 @@ function Form(props) {
 
   const validation = (values) => {
     const errors = {}
+    let date = new Date()
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear()
 
     if(!values.name){
       errors.name = "Please enter name on the card."
@@ -50,10 +53,17 @@ function Form(props) {
     } else if (!/^[0-9]*$/.test(values.expMonth) || !/^[0-9]*$/.test(values.expYear)){
       errors.expMonth = "Wrong format, numbers only."
     }
+
+    if(values.expMonth === "00"){
+      errors.expMonth = "Invalid Month."
+    }
+
+     if(Number(values.expMonth) < month || Number("23" + values.expYear) < year){
+      errors.expMonth = "Card has expired."
+     }
+    
     return errors
   }
-
-  console.log(formErrors)
 
   return(
     <form className="form-main" onSubmit={handleSubmit}>
@@ -122,7 +132,7 @@ function Form(props) {
         />
         </div>
       </div>
-      <button type="submit" className="form-btn">Submit</button>
+      <button type="submit" className="form-btn">Confirm</button>
 
     </form>
   )
