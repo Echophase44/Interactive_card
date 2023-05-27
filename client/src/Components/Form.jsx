@@ -3,7 +3,7 @@ import { useState } from "react";
 import '../styles/form.css'
 
 function Form(props) {
-  const { setCardDisplayInfo } = props
+  const { setCardDisplayInfo, setIsConfirmed } = props
 
   const initialValues = {name: "", number: "", expMonth: "", expYear: "", cvc: ""}
   const [formValues, setFormValues] = useState(initialValues)
@@ -28,6 +28,9 @@ function Form(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validation(formValues))
+    if(Object.keys(formErrors).length === 0){
+      setIsConfirmed(true)
+    }
   }
 
   const validation = (values) => {
@@ -54,12 +57,17 @@ function Form(props) {
       errors.expMonth = "Wrong format, numbers only."
     }
 
-    if(values.expMonth === "00"){
+    if(values.expMonth === "00" || Number(values.expMonth) > 12){
       errors.expMonth = "Invalid Month."
     }
 
      if(Number(values.expMonth) < month || Number("23" + values.expYear) < year){
       errors.expMonth = "Card has expired."
+     }
+     if(!values.cvc){
+      errors.cvc = "Field cannot be blank."
+     } else if(!/^[0-9]*$/.test(values.cvc)){
+      errors.cvc = "Wrong format, numbers only."
      }
     
     return errors
@@ -130,6 +138,7 @@ function Form(props) {
           value={formValues.cvc}
           onChange={handleChange}
         />
+        <p>{formErrors.cvc}</p>
         </div>
       </div>
       <button type="submit" className="form-btn">Confirm</button>

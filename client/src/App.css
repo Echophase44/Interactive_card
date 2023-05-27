@@ -140,9 +140,6 @@ main{
   .infoContainer{
     width: 100vw;
     height: 60vh;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    border: 1px dashed blue;
+    padding: 15px;
   }
 }

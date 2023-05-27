@@ -73,8 +73,21 @@ p {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     justify-content: center;
+    
+  }
 
+  .form-wrapper{
+    gap: 10px;
+  }
+
+  #cvc{
+    width: 185px;
+  }
+
+  .columnWrapper > label, .form-main > label{
+    font-size: .8rem;
+    font-weight: bold;
   }
 }

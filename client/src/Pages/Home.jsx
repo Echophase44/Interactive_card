@@ -15,6 +15,8 @@ function Home () {
     cvc: ["000"]
   })
 
+  const [isConfirmed, setIsConfirmed] = useState(false)
+
   const displayCardNumber = cardDisplayInfo.number.map((value) =>{
     const groupOne = value.slice(0, 4)
     const groupTwo = value.slice(4,8)
@@ -44,9 +46,12 @@ function Home () {
       </div>
      
      <section className="infoContainer">
-      <Form 
+      {!isConfirmed && <Form 
         setCardDisplayInfo = { setCardDisplayInfo }
-      />
+        setIsConfirmed = { setIsConfirmed }
+      />}
+
+      {isConfirmed && <div>Hola</div>}
 
      </section>
 
