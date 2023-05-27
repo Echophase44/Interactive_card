@@ -29,7 +29,8 @@ function Home () {
   return (
     <main>
       <div className="imageContainer">
-        <img className="imageBackround" src={bg_desktop} alt="Background" />
+        {/* <img className="imageBackround" src={bg_desktop} alt="Background" /> */}
+        <div className="imageBackround"></div>
         <div className="card-front" style={{backgroundImage:"url(" + card_front + ")"}}>
           <img className="card-logo" src={cardLogo} alt="Card Logo" />
           {displayCardNumber}

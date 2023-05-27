@@ -11,6 +11,9 @@ main{
 .imageBackround{
   height: 100vh;
   width: 40vw;
+  background-image: url("../src/assets/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .card-front{
@@ -41,7 +44,7 @@ main{
 }
 
 .card-number{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--white);
   position: absolute;
   top: 40%;
@@ -64,6 +67,7 @@ main{
   background-size: contain;
   background-repeat: no-repeat;
   padding-top: 54.7%;
+  color: var(--white)
 }
 
 .card-security{
@@ -78,4 +82,67 @@ main{
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+@media screen and (max-width: 414px){
+  main{
+    flex-direction: column;
+  }
+
+  .imageContainer{
+    height: 40vh;
+    width: 100vw;
+  }
+
+  .imageBackround{
+    background-image: url("../src/assets/bg-main-mobile.png");
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .card-front{
+    height: 225px;
+    width: 300px;
+    top: 150px;
+    right: 65px;
+
+    background-size: fill;
+    padding-top: none;
+    z-index: 5;
+  }
+
+  .card-logo{
+    width: 40px;
+  }
+
+  .card-number{
+    font-size: 1rem;
+    left: 15%;
+  }
+
+  .card-back{
+    bottom: none;
+    top: 10px;
+    right: 50px;
+
+    height: 225px;
+    width: 300px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: none;
+  }
+
+  .card-security{
+    top: 31%;
+  }
+
+  .infoContainer{
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: 1px dashed blue;
+  }
 }
