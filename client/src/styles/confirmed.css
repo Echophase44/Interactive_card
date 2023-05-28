@@ -1,0 +1,36 @@
+.confirmed-container{
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.confirmed-checkmark{
+  padding-bottom: 25px;
+}
+
+.confirmed-thanks{
+  color: var(--dark-violet);
+  font-size: 1.5rem;
+}
+
+.confirmed-message{
+  padding-bottom: 25px;
+}
+
+.confirmed-button{
+  color: var(--white);
+  background-color: var(--dark-violet);
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+}
+
+.confirmed-button:hover{
+  cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Form from '../Components/Form.jsx'
-import bg_desktop from '../assets/bg-main-desktop.png'
+import Confirmed from  '../Components/Confirmed.jsx'
 import card_front from '../assets/bg-card-front.png'
 import card_back from '../assets/bg-card-back.png'
 import cardLogo from '../assets/card-logo.svg'
@@ -51,7 +51,7 @@ function Home () {
         setIsConfirmed = { setIsConfirmed }
       />}
 
-      {isConfirmed && <div>Hola</div>}
+      {isConfirmed && <Confirmed />}
 
      </section>
 
