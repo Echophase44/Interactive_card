@@ -36,6 +36,7 @@ function Form(props) {
     let month = date.getMonth() + 1;
     let year = date.getFullYear()
     let yearDiff = Number(year.toString().charAt(0) + year.toString().charAt(1) + values.expYear) - year
+    console.log(month)
 
     if(!values.name){
       errors.name = "Please enter name on the card."
@@ -59,7 +60,7 @@ function Form(props) {
       errors.expMonth = "Invalid Month."
     }
 
-     if(Number(values.expMonth) < month || Number("23" + values.expYear) < year){
+     if(Number("23" + values.expYear) < year || Number(values.expMonth < month)){
       errors.expMonth = "Card has expired."
      } else if (yearDiff > 5 || yearDiff < 0) {
       errors.expMonth = "Invalid year."
@@ -74,7 +75,7 @@ function Form(props) {
      if(Object.keys(errors).length === 0){
       setIsConfirmed(true)
       }
-    console.log(yearDiff)
+    
     return errors
 
     
