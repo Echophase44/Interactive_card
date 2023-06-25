@@ -60,7 +60,7 @@ function Form(props) {
       errors.expMonth = "Invalid Month."
     }
 
-     if(Number("23" + values.expYear) < year || Number(values.expMonth < month)){
+     if(Number("23" + values.expYear) < year){
       errors.expMonth = "Card has expired."
      } else if (yearDiff > 5 || yearDiff < 0) {
       errors.expMonth = "Invalid year."

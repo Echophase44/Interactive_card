@@ -17,14 +17,14 @@ function Home () {
 
   const [isConfirmed, setIsConfirmed] = useState(false)
 
-  const displayCardNumber = cardDisplayInfo.number.map((value) =>{
+  const displayCardNumber = cardDisplayInfo.number.map((value, index) =>{
     const groupOne = value.slice(0, 4)
     const groupTwo = value.slice(4,8)
     const groupThree = value.slice(8, 12)
     const groupFour = value.slice(12)
 
     return(
-      <div className="card-number">{groupOne}&nbsp;&nbsp;{groupTwo}&nbsp;&nbsp;{groupThree}&nbsp;&nbsp;{groupFour}</div>
+      <div key="index" className="card-number">{groupOne}&nbsp;&nbsp;{groupTwo}&nbsp;&nbsp;{groupThree}&nbsp;&nbsp;{groupFour}</div>
     )
   })
 
